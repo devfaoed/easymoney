@@ -1,0 +1,126 @@
+
+
+    <%- include("./partials/header.ejs") %>
+
+    <br><br>
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-stretch gy-4">
+          <div class="col-lg-3">
+
+            <!-- Income-->
+            <div class="card text-center h-100 mb-0">
+              <div class="card-body">
+                <svg class="svg-icon svg-icon-big svg-icon-light mb-4 text-muted">
+                  <use xlink:href="#sales-up-1"> </use>
+                </svg>
+                
+                <h3 class="text-gray-700 display-6">Available Balance</h3>
+                <% if(!currentUser){ %>
+                    <p class="text-primary h2 fw-bold">--.--</p>
+                  <% } else { %>
+                    <p class="text-primary h2 fw-bold">--.--</p>
+                    <% } %>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <!-- Income-->
+            <div class="card text-center h-100 mb-0">
+              <div class="card-body">
+                <svg class="svg-icon svg-icon-big svg-icon-light mb-4 text-muted">
+                  <use xlink:href="#sales-up-1"> </use>
+                </svg>
+                <p class="text-gray-700 display-6">Account Number</p>
+                    <% if(!currentUser){ %>
+                      <p class="text-primary h2 fw-bold">--.--</p>
+                <% } else { %>
+                  <p class="text-primary h2 fw-bold"><%= currentUser.pacctN %></p>
+                  <% } %>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <!-- Monthly Usage-->
+            <div class="card h-100 mb-0">
+              <div class="card-body">
+                <h2 class="h3 fw-normal mb-4">Transfer Fund</h2>
+                <div class="row align-items-center mb-3 gx-lg-5">
+                  <div class="col-lg-6">
+                    <table class="w-100">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="position-relative mx-auto" style="max-width: 120px">
+                              <canvas class="mx-auto" id="monthlyProgress" width="150" height="150"></canvas>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-lg-6 border-start">
+                    <a href="#" class="btn btn-primary btn-lg">Transfer</a>
+                  </div>
+                </div>
+                <p class="text-xs text-muted">Quick refund if error occur</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <!-- User Actibity-->
+            <div class="card h-100 mb-0">
+              <div class="card-body">
+                <a href="/settings/<%= currentUser._id %>">Settings</a>
+                <p class="display-6">Finish account settings here</p>
+                <h3 class="h4 fw-normal">to get account number</h3>
+                <div class="d-flex justify-content-between">
+                  <div class="text-start">
+                    <p class="h5 fw-normal mb-2">Ignore if gotten one already</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+      <DIV class="container">
+          <div class="col-lg-12 col-md-6">
+            <!-- Recent Activities Widget      -->
+            <div class="card">
+              <div class="card-header border-bottom">
+                <h2 class="h5 fw-normal mb-0"><a class="card-collapse-link text-dark d-block" data-bs-toggle="collapse" href="#activities-box" aria-expanded="true">Recent Activities</a></h2>
+              </div>
+              <div class="card-body p-0">
+                <div class="collapse show" id="activities-box" role="tabpanel">
+                  <div class="row g-0 border-bottom border-gray-200">
+                    <div class="col-sm-4 col-3 text-end">
+                      <ul class="list-inline mb-0">
+                        <li>
+                          <div class="d-inline-block p-2 bg-light"><i class="far fa-clock fa-fw"></i></div>
+                        </li>
+                        <li class="me-2"><span class="small text-gray-500"></span></li>
+                        <li class="me-2"><span class="small text-info lh-1 d-block"></span></li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-8 col-9 border-start border-gray-200 p-3">
+                      <h5 class="fw-normal"></h5>
+                      <p class="small mb-0 text-gray-600">
+                        
+                      </p>
+                    </div>
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include("./partials/footer.ejs") %>

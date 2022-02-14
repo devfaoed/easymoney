@@ -1,0 +1,54 @@
+<%- include("./partials/header.ejs") %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-xs-6">
+            <h2>UPDATE ARTICLE</h2>
+            <form method="POST" action="/blog/<%= foundblog._id %>?_method=PUT" >
+                <div class="form-group">
+                    <label for="name">Topic</label>
+                    <input type="text" name="blog[topic]" class="form-control" value="<%= foundblog.topic %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Category</label>
+                    <select id="category" name="blog[category]" class="form-control">
+                        <option><%= foundblog.category %></option>
+                        <option>Technolgy</option>
+                        <option>Science</option>
+                        <option>Health</option>
+                        <option>Life</option>
+                        <option>Marketing</option>
+                        <option>Sport</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Title</label>
+                    <input type="text" name="blog[title]" class="form-control" value="<%= foundblog.title%>">
+                </div>
+                
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="text" name="blog[image]" class="form-control" value="<%= foundblog.image %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea cols="10" rows="10" name="blog[description]" class="form-control" placeholder="body of your article"><%= foundblog.description %></textarea>
+                </div>
+               
+                <button class="btn btn-success btn-lg btn-block">UPDATE</button>
+            </form>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+
+
+
+<%- include("./partials/footer.ejs") %>

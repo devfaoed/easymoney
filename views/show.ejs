@@ -1,0 +1,106 @@
+<%- include("./partials/header.ejs") %>
+ 
+    <div class="container">
+        <div class="row head">
+            <div class="col-md-3">
+                <ul class="list-group">
+                    <li class="list-group-item active"></li>
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item"></li>
+                </ul>
+            </div>    
+
+            <div class="col-md-7">
+                <div class="post-box">
+                    <blockquote class="blockquote">
+                        <h3><%= foundblog.title %></h3>
+                            <em>
+                                    <p><i class="fas fa-clock"></i> <%= foundblog.date.toDateString() %></p>
+                                    <p>Category: <span><b><%= foundblog.category %></b></span> |  <em>Submitted by: <span><%= foundblog.author.username %></span></em></p>
+                                   
+                            </em>
+                        </blockquote>
+                    <div class="img">
+                        <div>
+                            <img src="<%= foundblog.image %>" alt="<%= foundblog.name %> image">
+                            <div>
+                                <p class="text-justify"> <%= foundblog.description %> </p>
+                                <p>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <td> <a href="/" class="btn btn-default">back</a></td>
+                                                
+                                                <td>
+                                                    <form action="/blog/<%= foundblog._id %>/like" method="POST"> 
+                                                       <button class="btn btn-default" name="like[react]">like</button>
+                                                    </form>
+                                                </td>
+
+                                                <td> <a href="/blog/<%= foundblog._id %>/show" class="btn btn-default">comment</a></td>
+                                                <% if(currentUser && foundblog.author.id.equals(currentUser._id)) {%>
+                                                    <td><a href="/blog/<%= foundblog._id %>/edit" class="btn btn-success">Update</a></td>
+                                                    <td> 
+                                                        <form method="POST" action="/blog/<%= foundblog._id %>?_method=DELETE" class="form-inline">
+                                                            <button class="btn btn-danger d-inline">Delete</button>
+                                                        </form>
+                                                    </td>
+                                                <% } %>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                   
+                                   
+                                   
+                                    
+                                   
+                            </div>
+                            <hr>
+                          
+                            <div class="row">
+                                <div class="col-md-9">
+                                     <% foundblog.comments.forEach(function(comment){ %> 
+                                        <p><b><%= comment.author.username %>:</b>
+                                            <span><em><%= comment.title %></em></span>
+                                        </p>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <% if(currentUser && comment.author.id.equals(currentUser._id)) {%>
+                                                        <td><a href="/blog/<%= foundblog._id %>/show/<%= comment._id %>/edit" class="btn btn-success">Edit</a></td>
+                                                        <td> 
+                                                            <form method="POST" action="/blog/<%= foundblog._id %>/show/<%= comment._id %>?_method=DELETE" class="form-inline">
+                                                                <button class="btn btn-danger d-inline">Delete</button>
+                                                            </form>
+                                                        </td>
+                                                        <% } %>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </p>
+                                     <% })%>
+                                </div>
+                                 <div class="col-md-9">
+                                    <form class="form-inline my-2 my-lg-0" method="POST" action="/blog/<%= foundblog._id %>/show">
+                                        <textarea class="form-control mr-sm-4" cols="40" placeholder="Add Comment" name="comment[title]"></textarea>
+                                        <button class="btn btn-lg btn-outline-primary my-2 my-sm-0" type="submit">Comment</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                                
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+<%- include("./partials/footer.ejs") %>

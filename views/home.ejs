@@ -1,0 +1,217 @@
+<%- include("./partials/header.ejs") %>
+   <!-- Hero section -->
+	<section class="hero-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 hero-text">
+					<h2>EASYMONEY</h2>
+					<h4>Send money to anywhere from all over the world</h4>
+					<!-- <form class="hero-subscribe-from">
+						<input type="text" placeholder="Enter your email">
+						<button class="site-btn sb-gradients">Get Started</button>
+					</form> -->
+				</div>
+				<div class="col-md-6">
+					<div>
+						<form>
+						  <div class="container">
+							<div class="currency">
+							<select id="from_currency">
+							<option value="AED">AED</option>
+							<option value="ARS">ARS</option>
+							<option value="AUD">AUD</option>
+							<option value="BGN">BGN</option>
+							<option value="BRL">BRL</option>
+							<option value="BSD">BSD</option>
+							<option value="CAD">CAD</option>
+							<option value="CHF">CHF</option>
+							<option value="CLP">CLP</option>
+							<option value="CNY">CNY</option>
+							<option value="COP">COP</option>
+							<option value="NGN">NGN</option>
+							<option value="CZK">CZK</option>
+							<option value="DKK">DKK</option>
+							<option value="DOP">DOP</option>
+							<option value="EGP">EGP</option>
+							<option value="EUR">EUR</option>
+							<option value="FJD">FJD</option>
+							<option value="GBP">GBP</option>
+							<option value="GTQ">GTQ</option>
+							<option value="HKD">HKD</option>
+							<option value="HRK">HRK</option>
+							<option value="HUF">HUF</option>
+							<option value="IDR">IDR</option>
+							<option value="ILS">ILS</option>
+							<option value="INR">INR</option>
+							<option value="ISK">ISK</option>
+							<option value="JPY">JPY</option>
+							<option value="KRW">KRW</option>
+							<option value="KZT">KZT</option>
+							<option value="MXN">MXN</option>
+							<option value="MYR">MYR</option>
+							<option value="NOK">NOK</option>
+							<option value="NZD">NZD</option>
+							<option value="PAB">PAB</option>
+							<option value="PEN">PEN</option>
+							<option value="PHP">PHP</option>
+							<option value="PKR">PKR</option>
+							<option value="PLN">PLN</option>
+							<option value="PYG">PYG</option>
+							<option value="RON">RON</option>
+							<option value="RUB">RUB</option>
+							<option value="SAR">SAR</option>
+							<option value="SEK">SEK</option>
+							<option value="SGD">SGD</option>
+							<option value="THB">THB</option>
+							<option value="TRY">TRY</option>
+							<option value="TWD">TWD</option>
+							<option value="UAH">UAH</option>
+							<option value="USD" selected>USD</option>
+							<option value="UYU">UYU</option>
+							<option value="VND">VND</option>
+							<option value="ZAR">ZAR</option>
+							</select>
+							<input type="number" id="from_ammount" placeholder="0" value=1 />
+							</div>
+							<div class="middle">
+							<button id="exchange">
+							<i class="fas fa-exchange-alt"></i>
+							</button>
+							<div class="rate" id="rate"></div>
+							</div>
+							<div class="currency">
+							<select id="to_currency"><option value="AED">AED</option>
+							<option value="ARS">ARS</option>
+							<option value="AUD">AUD</option>
+							<option value="BGN">BGN</option>
+							<option value="BRL">BRL</option>
+							<option value="BSD">BSD</option>
+							<option value="CAD">CAD</option>
+							<option value="CHF">CHF</option>
+							<option value="CLP">CLP</option>
+							<option value="CNY">CNY</option>
+							<option value="COP">COP</option>
+							<option value="CZK">CZK</option>
+							<option value="DKK">DKK</option>
+							<option value="DOP">DOP</option>
+							<option value="EGP">EGP</option>
+							<option value="EUR">EUR</option>
+							<option value="FJD">FJD</option>
+							<option value="GBP">GBP</option>
+							<option value="GTQ">GTQ</option>
+							<option value="HKD">HKD</option>
+							<option value="HRK">HRK</option>
+							<option value="HUF">HUF</option>
+							<option value="IDR">IDR</option>
+							<option value="ILS">ILS</option>
+							<option value="INR">INR</option>
+							<option value="ISK">ISK</option>
+							<option value="NGN" selected>NGN</option>
+							<option value="JPY">JPY</option>
+							<option value="KRW">KRW</option>
+							<option value="KZT">KZT</option>
+							<option value="MXN">MXN</option>
+							<option value="MYR">MYR</option>
+							<option value="NOK">NOK</option>
+							<option value="NZD">NZD</option>
+							<option value="PAB">PAB</option>
+							<option value="PEN">PEN</option>
+							<option value="PHP">PHP</option>
+							<option value="PKR">PKR</option>
+							<option value="PLN">PLN</option>
+							<option value="PYG">PYG</option>
+							<option value="RON">RON</option>
+							<option value="RUB">RUB</option>
+							<option value="SAR">SAR</option>
+							<option value="SEK">SEK</option>
+							<option value="SGD">SGD</option>
+							<option value="THB">THB</option>
+							<option value="TRY">TRY</option>
+							<option value="TWD">TWD</option>
+							<option value="UAH">UAH</option>
+							<option value="USD">USD</option>
+							<option value="UYU">UYU</option>
+							<option value="VND">VND</option>
+							<option value="ZAR">ZAR</option>
+							</select>
+							<input type="number" id="to_ammount" placeholder="0" />
+							</div>
+						   </div>
+						</form>
+					</div>
+				  </div>
+					
+				</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+
+	<!-- About section -->
+	<section class="about-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 offset-lg-6 about-text">
+					<h2>About Us</h2>
+					<h5> We Solve Your Financial Problem</h5>
+					<p>Far far away, behind the word mountains, far from the countries and money transfer problem.</p>
+				</div>
+			</div>
+			<div class="about-img">
+				<img src="img/hero_1.jpg" alt="" width="70%" style="margin-top: -50px;">
+			</div>
+		</div>
+	</section>
+	<!-- About section end -->
+
+
+	<!-- Features section -->
+	<section class="features-section spad gradient-bg">
+		<div class="container text-white">
+			<div class="section-title text-center">
+				<h2>Frequently Ask Questions </h2>
+				<p>Far far away, behind the word mountains, far from the countries and money transfer problem.</p>
+
+			</div>
+			<div class="row">
+				<!-- feature -->
+				<div class="col-md-6 col-lg-6 feature">
+					<i class="ti-mobile"></i>
+					<div class="feature-content">
+						<h4>Can I accept both Paypal and Stripe?</h4>
+						<p>Not yet Available on the app but the features will soon be added.</p>
+					</div>
+				</div>
+				<!-- feature -->
+				<div class="col-md-6 col-lg-6 feature">
+					<i class="ti-shield"></i>
+					<div class="feature-content">
+						<h4>What is your opening time?</h4>
+						<p>The are available 24/7 evyday and every time, Customers satisfaction is our main gain</p>
+					</div>
+				</div>
+				<!-- feature -->
+				<div class="col-md-6 col-lg-6 feature">
+					<i class="ti-wallet"></i>
+					<div class="feature-content">
+						<h4>What available is refund period?</h4>
+						<p>Any failed transaction will be reveresed instantly</p>
+					</div>
+				</div>
+				<!-- feature -->
+				<div class="col-md-6 col-lg-6 feature">
+					<i class="ti-headphone-alt"></i>
+					<div class="feature-content">
+						<h4>Where are you from?</h4>
+						<p>We are from all over the place </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Features section end -->
+
+
+<%- include("./partials/footer.ejs") %>

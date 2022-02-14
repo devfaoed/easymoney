@@ -1,0 +1,54 @@
+<%- include("./partials/header.ejs") %>
+
+<div class="container">
+    <div class="row head" id="peak">
+        <div class="col-md-9 col-xs-6">
+            <h2>CREATE ARTICLE</h2>
+            <form action="/blog/new" method="POST">
+                <div class="form-group">
+                    <label for="name">Topic</label>
+                    <input type="text" name="topic" class="form-control" placeholder="what you are writing about">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Category</label>
+                    <select id="category" name="category" class="form-control">
+                        <option>Select from Option</option>
+                        <option>Technolgy</option>
+                        <option>Science</option>
+                        <option>Health</option>
+                        <option>Life</option>
+                        <option>Marketing</option>
+                        <option>Sport</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Title</label>
+                    <input type="text" name="title" class="form-control" placeholder="article title">
+                </div>
+                
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="text" name="image" class="form-control" placeholder="image url only">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea cols="10" rows="10" name="description" class="form-control" placeholder="body of your article"></textarea>
+                </div>
+               
+                <input type="submit" class="btn btn-primary btn-lg btn-block" value="CREATE">
+            </form>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+
+
+
+<%- include("./partials/footer.ejs") %>

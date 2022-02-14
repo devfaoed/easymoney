@@ -1,0 +1,28 @@
+<%- include("./partials/header.ejs") %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>EDIT COMMENT</h2>
+            <form  method="POST" action="/blog/<%= campground_id %>/show/<%= foundcomment._id %>?_method=PUT">
+                <div class="form-group">
+                    <input type="text" id="comment" name="comment[title]" class="form-control" value="<%= foundcomment.title %>">
+                </div>
+                
+                <div class="form-group">
+                    <button class="btn btn-outline-primary btn-block" type="submit">Update Comment</button>
+                </div>
+                
+            </form>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+
+
+
+<%- include("./partials/footer.ejs") %>
