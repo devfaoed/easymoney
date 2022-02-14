@@ -64,5 +64,5 @@ app.use(userRouter)
 
 
 app.listen(2022, function(){
-    console.log("Blog server started successfully on port 2022");
+    console.log("easymoney server started successfully on port 2022");
 })
